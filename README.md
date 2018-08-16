@@ -14,3 +14,7 @@
 6.3 管理视图，创建讲师， 创建班级，创建课程
 
 7. 上面的操作产生的数据都通过pickle序列化保存到文件里
+
+程序逻辑结构图如下：
+
+![Image text](https://github.com/nighttidesy/images-packge/blob/master/test.jpg)
