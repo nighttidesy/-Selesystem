@@ -15,10 +15,6 @@
 
 7. 上面的操作产生的数据都通过pickle序列化保存到文件里
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 程序逻辑结构图如下：
 
 ![Image text](https://github.com/nighttidesy/images-packge/blob/master/test.jpg)
