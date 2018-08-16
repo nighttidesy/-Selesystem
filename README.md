@@ -16,31 +16,8 @@
 7. 上面的操作产生的数据都通过pickle序列化保存到文件里
 
 
-文件结构
-
--bin                     #启动脚本目录
-    -start.py              #启动脚本
--core                    #核心代码目录
-
-  -corepachge.py         #系统逻辑结构包文件
-
-  -admin_view.py         #管理员视图
-
-  -student_view.py       #学员视图
-
-  -teacher_view.py       #讲师视图
-
--data                    #存放数据目录
-
--logs                    #存放日志目录
-
--doc                     #文档目录
-
-README.md                #说明文件
-
-
-
-
+文件结构如下:
+![Image text](https://raw.githubusercontent.com/nighttidesy/images-packge/master/20180816174534.jpg)
 
 
 程序逻辑结构图如下：
