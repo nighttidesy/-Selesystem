@@ -47,6 +47,7 @@ class Mainprogram(object):
             elif yourinput == "q":
                 sys.exit()
             else:
+                
                 print("\033[1;31m您的输入不正确。\033[0m")
             
 class Student_view(object):
@@ -58,7 +59,6 @@ class Student_view(object):
          self.admin_view_obj = Admin_view()
     def __del__(self):
         self.admin_view_obj.schooldata.close()
-        print("student __del__")
     def run_student_view(self):
         
         self.admin_view_obj.school_list()                                                            #展示学校列表
@@ -93,7 +93,7 @@ class Student_view(object):
             print('\033[1;35m\n\n{}\n\n\033[0m'.format(student_view_page))
             your_input4 = str(input("\033[1;35m请选择：  \033[0m").strip())
             if your_input4 == "r":
-                self.admin_view_obj.schooldata.close()
+                self.admin_view_obj.schooldata.close()                #这个操作很重要,在退出这个页面返回到上个页面时候如果不关闭这个文件，在返回上级进入其他视图的时候就会报错，因为当一个文件通过shelve打开后，如果没有关闭这个状态,便不能再通过shelve再去打开。
                 break
             if your_input4 == "q":
                 self.admin_view_obj.exit_program()
@@ -227,10 +227,8 @@ class Teacher_view(object):
         self.admin_view_obj = Admin_view()
     def __del__(self):
         self.admin_view_obj.schooldata.close()
-        print("teacher__del__")
     
     def run_teacher_view(self): 
-        print("teacher view")
         self.admin_view_obj.school_list()                                                            #展示学校列表
         self.your_choiseschool1 = input("\033[1;35m 请输入你要进入的学校：\033[0m").strip()
         if self.your_choiseschool1 in self.admin_view_obj.schooldata:
@@ -247,6 +245,7 @@ class Teacher_view(object):
                         2.查看个人信息
                         3.查看班级学生名单
                         4.查看学生成绩
+                        5.修改个人信息
                         r.返回上一级
                         q.退出登录
                     '''
@@ -254,7 +253,8 @@ class Teacher_view(object):
                     '1':'teacher_teaching',
                     '2':'teacher_info',
                     '3':'student_list',
-                    '4':'student_chengji'
+                    '4':'student_chengji',
+                    '5':'change_teacherinfo'
                     }
                      
                     print("\033[1;35m{}\033[0m".format(teacher_page))
@@ -278,19 +278,62 @@ class Teacher_view(object):
         
     def teacher_teaching(self):
         '''讲课'''
-        print("讲课")
+        print("\033[1;35m开始讲课 \033[0m")
+        time.sleep(2)
         
     def teacher_info(self):
         '''讲师个人信息'''
-        print("查看讲师个人信息")
+        print('''\033[1;35m\n讲师个人信息如下:  
+        讲师名称：{}
+        讲师性别：{}
+        讲师年龄：{}
+        讲师工资：{}
+        讲师电话号码：{}
+        \033[0m'''.format(self.teacher_obj.teacher_name,self.teacher_obj.teacher_gender,self.teacher_obj.teacher_age,self.teacher_obj.teacher_salary,self.teacher_obj.teacher_phonenumber))
         
     def student_list(self):
         '''班级学生名单'''
-        print("查看班级学生名单")
+        print("\033[1;35m 当前的班级如下: \033[0m")
+        for i in self.your_choiseschool_obj.school_grade:
+            print("\033[1;34m{}\033[0m".format(i))
+        your_input8 = str(input("\033[1;35m请输入你要查看的班级名: \033[0m").strip())
+        if your_input8 in self.your_choiseschool_obj.school_grade:
+            grade_obj = self.your_choiseschool_obj.school_grade[your_input8]              #实例化班级对象,班级中存放了学生对象字典grade_student
+            print("\033[1;34m\n\n{}学生列表如下: \033[0m".format(your_input8))
+            for j in grade_obj.grade_student:
+                student_obj = grade_obj.grade_student[j]
+                print('''\033[1;35m
+                姓名: {}  性别: {}  年龄: {}  缴费状态: {} 
+                \033[0m'''.format(student_obj.student_name,student_obj.student_gender,student_obj.student_age,student_obj.paycost_status))
+        else:
+            print("\033[1;35m您的输入有误。\033[0m")
+        
         
     def student_chengji(self):
         '''查看学生成绩'''
-        print("学生成绩列表")
+        print("学生成绩列表（这个的方法和学生缴费的方法类似，鉴于时间问题，就不写了）")            
+        
+    def change_teacherinfo(self):
+        '''修改讲师个人信息'''
+        print("\033[1;35m注意: 修改讲师个人信息,不能修改姓名,姓名需与之前一样。 \033[0m。")
+        teacher_name = str(input("\033[1;35m请输入讲师姓名:\033[0m").strip())
+        teacher_passwd = str(input("\033[1;35m请输入讲师登录密码:\033[0m").strip())
+        teacher_gender = str(input("\033[1;35m请输入讲师性别:\033[0m").strip())
+        teacher_age = str(input("\033[1;35m请输入讲师年龄:\033[0m").strip())
+        teacher_phonenumber = str(input("\033[1;35m请输入讲师电话号码:\033[0m").strip())
+        print('\033[1;35m你输入的信息如下: \n 姓名: {}\n性别: {}\n年龄: {}\n电话号码: {}\033[0m'.format(teacher_name,teacher_gender,teacher_age,teacher_salary,teacher_phonenumber))
+        your_input = str(input("\033[1;35m确认请输入yes|YES，输入其他视为取消修改。 :\033[0m").strip())
+        if your_input == "yes" or "YES":
+            self.teacher_obj.teacher_name = teacher_name
+            self.teacher_obj.teacher_passwd = teacher_passwd
+            self.teacher_obj.teacher_gender = teacher_gender
+            self.teacher_obj.teacher_age = teacher_age
+            self.teacher_obj.teacher_phonenumber = teacher_phonenumber
+            print('\033[1;35m 修改讲师{}信息成功\033[0m'.format(teacher_name))
+            
+        
+        else:
+            print("\033[1;35m您取消了修改 \033[0m")
         
         
         
@@ -306,7 +349,6 @@ class Admin_view(object):
  #           print("school.db文件不存在")
     def __del__(self):
         self.schooldata.close()
-        print("调用__del__")
     def run_admin_view(self):
         while True:
             
@@ -339,6 +381,7 @@ class Admin_view(object):
             
             else:
                 print("\033[1;31m您的输入不正确。\033[0m")
+                
                 continue
     
     def add_school(self):                 #添加学校
