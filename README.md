@@ -30,31 +30,31 @@
   
 文件结构如下:  
 
-Selesystem/                       #项目目录     
-|-- bin                           #启动脚本目录                     
-|   `-- start.py                  #启动脚本     
-|-- conf                          #配置文件目录       
-|   |-- config.py                 #配置文件            
-|-- core                          #核心主逻辑包            
-|   |-- __init__.py               #             
-|   |-- main.py                   #主程序文件             
-|-- data                          #数据目录              
-|   |-- school                    #            
-|   |   |-- school.db             #            
-|   |   `-- school.db.bak         #             
-|-- doc                           #文档目录             
-|-- logs                          #日志目录             
-|   `-- service.log               #日志文件             
-|-- modules                       #模块包            
-|   |-- course.py                 #课程模块              
-|   |-- grade.py                  #班级模块              
-|   |-- __init__.py               #              
-|   |-- school.py                 #学校模块               
-|   |-- student.py                #学生模块            
-|   `-- teacher.py                #讲师模块                
+Selesystem/                       #项目目录      
+|-- bin                           #启动脚本目录                        
+|   `-- start.py                  #启动脚本   
+|-- conf                          #配置文件目录         
+|   |-- config.py                 #配置文件              
+|-- core                          #核心主逻辑包              
+|   |-- __init__.py               #               
+|   |-- main.py                   #主程序文件               
+|-- data                          #数据目录                
+|   |-- school                    #              
+|   |   |-- school.db             #              
+|   |   `-- school.db.bak         #               
+|-- doc                           #文档目录               
+|-- logs                          #日志目录               
+|   `-- service.log               #日志文件               
+|-- modules                       #模块包              
+|   |-- course.py                 #课程模块                
+|   |-- grade.py                  #班级模块                
+|   |-- __init__.py               #                
+|   |-- school.py                 #学校模块                 
+|   |-- student.py                #学生模块              
+|   `-- teacher.py                #讲师模块                  
 |-- README.md                     #                 
-`-- test                          #测试目录                  
-    `-- test.py                   #测试及生成册数数据脚本                   
+`-- test                          #测试目录                    
+    `-- test.py                   #测试及生成册数数据脚本                     
 
 
 
