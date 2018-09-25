@@ -1,0 +1,40 @@
+
+Tue, 25 Sep 2018 10:11:22 main.py[line:24] DEBUG program begain running...
+Tue, 25 Sep 2018 10:11:22 main.py[line:26] DEBUG 进入选课系统
+Tue, 25 Sep 2018 10:11:39 main.py[line:37] DEBUG 你的选择: 3
+Tue, 25 Sep 2018 10:11:39 main.py[line:389] INFO running run_admin_view
+Tue, 25 Sep 2018 10:11:39 main.py[line:391] INFO 进入管理视图
+Tue, 25 Sep 2018 10:11:43 main.py[line:439] INFO 显示学校列表
+Tue, 25 Sep 2018 10:11:43 main.py[line:391] INFO 进入管理视图
+Tue, 25 Sep 2018 10:12:05 main.py[line:463] INFO 进入管理学校
+Tue, 25 Sep 2018 10:12:05 main.py[line:439] INFO 显示学校列表
+Tue, 25 Sep 2018 10:12:24 main.py[line:565] INFO 查看讲师列表
+Tue, 25 Sep 2018 10:12:38 main.py[line:516] INFO 添加讲师
+Tue, 25 Sep 2018 10:13:04 main.py[line:528] INFO 添加讲师成功龙先生
+Tue, 25 Sep 2018 10:13:19 main.py[line:565] INFO 查看讲师列表
+Tue, 25 Sep 2018 10:14:24 main.py[line:643] INFO 退出选课系统
+Tue, 25 Sep 2018 10:14:24 main.py[line:387] INFO 调用Admin_view __del__
+Tue, 25 Sep 2018 10:14:45 main.py[line:24] DEBUG program begain running...
+Tue, 25 Sep 2018 10:14:45 main.py[line:26] DEBUG 进入选课系统
+Tue, 25 Sep 2018 10:14:48 main.py[line:37] DEBUG 你的选择: 1
+Tue, 25 Sep 2018 10:14:48 main.py[line:69] INFO running run_student_view
+Tue, 25 Sep 2018 10:14:48 main.py[line:439] INFO 显示学校列表
+Tue, 25 Sep 2018 10:14:53 main.py[line:72] INFO 您输入的学校: 清华
+Tue, 25 Sep 2018 10:15:00 main.py[line:85] INFO 您要登录的班级1班
+Tue, 25 Sep 2018 10:15:00 main.py[line:88] INFO 进入国际精英培训学院清华分院
+Tue, 25 Sep 2018 10:15:05 main.py[line:26] DEBUG 进入选课系统
+Tue, 25 Sep 2018 10:15:07 main.py[line:37] DEBUG 你的选择: 2
+Tue, 25 Sep 2018 10:15:07 main.py[line:257] INFO running run_teacher_view
+Tue, 25 Sep 2018 10:15:07 main.py[line:439] INFO 显示学校列表
+Tue, 25 Sep 2018 10:15:24 main.py[line:267] INFO 讲师登录成功，龙先生
+Tue, 25 Sep 2018 10:15:29 main.py[line:26] DEBUG 进入选课系统
+Tue, 25 Sep 2018 10:15:30 main.py[line:37] DEBUG 你的选择: 3
+Tue, 25 Sep 2018 10:15:30 main.py[line:389] INFO running run_admin_view
+Tue, 25 Sep 2018 10:15:30 main.py[line:391] INFO 进入管理视图
+Tue, 25 Sep 2018 10:15:34 main.py[line:439] INFO 显示学校列表
+Tue, 25 Sep 2018 10:15:34 main.py[line:391] INFO 进入管理视图
+Tue, 25 Sep 2018 10:15:37 main.py[line:643] INFO 退出选课系统
+Tue, 25 Sep 2018 10:15:37 main.py[line:67] INFO 调用student_view __del__
+Tue, 25 Sep 2018 10:15:37 main.py[line:387] INFO 调用Admin_view __del__
+Tue, 25 Sep 2018 10:15:37 main.py[line:387] INFO 调用Admin_view __del__
+Tue, 25 Sep 2018 10:15:37 main.py[line:387] INFO 调用Admin_view __del__
