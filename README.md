@@ -30,18 +30,18 @@
   
 文件结构如下:  
 
-Selesystem/                       #项目目录\<br>   
-|-- bin                           #启动脚本目录\<br>                       
-|   `-- start.py                  #启动脚本\<br>   
-|-- conf                          #配置文件目录\<br>        
-|   |-- config.py                 #配置文件\<br>              
-|-- core                          #核心主逻辑包\<br>             
-|   |-- __init__.py               #\<br>               
-|   |-- main.py                   #主程序文件\<br>               
-|-- data                          #数据目录\<br>                
-|   |-- school                    #              
-|   |   |-- school.db             #              
-|   |   `-- school.db.bak         #               
+Selesystem/                       #项目目录  
+|-- bin                           #启动脚本目录  
+|   `-- start.py                  #启动脚本  
+|-- conf                          #配置文件目录  
+|   |-- config.py                 #配置文件  
+|-- core                          #核心主逻辑包  
+|   |-- __init__.py               #  
+|   |-- main.py                   #主程序文件  
+|-- data                          #数据目录  
+|   |-- school                    #  
+|   |   |-- school.db             #  
+|   |   `-- school.db.bak         #  
 |-- doc                           #文档目录               
 |-- logs                          #日志目录               
 |   `-- service.log               #日志文件               
